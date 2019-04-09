@@ -6,8 +6,8 @@ end
 
 def get_contestant_name(data, occupation)
   data.each do |season, array|
-    array.each do |people|
-      people.each {|type, value| return people["name"] if value == occupation}
+    array.each do |hash|
+      hash.each {|type, value| return hash["name"] if value == occupation}
     end
   end
 end
@@ -15,8 +15,8 @@ end
 def count_contestants_by_hometown(data, hometown)
   counter = 0
   data.each do |season, array|
-    array.each do |people|
-      people.each {|type, value| counter += 1 if value == hometown}
+    array.each do |hash|
+      hash.each {|type, value| counter += 1 if value == hometown}
     end
   end
   return counter
@@ -24,8 +24,8 @@ end
 
 def get_occupation(data, hometown)
   data.each do |season, array|
-    array.each do |people|
-      people.each {|type, value| return people["occupation"] if value == hometown}
+    array.each do |hash|
+      hash.each {|type, value| return hash["occupation"] if value == hometown}
     end
   end
 end
